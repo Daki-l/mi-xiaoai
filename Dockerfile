@@ -8,7 +8,7 @@ RUN --mount=type=cache,target=/root/.npm \
 
 FROM runtime as dist
 RUN --mount=type=cache,target=/root/.npm \
-    npm ci --ignore-scripts && npm exec -- tsup
+    npm ci --ignore-scripts && npm exec -- prisma generate && npm exec -- tsup
 
 FROM base as release
 
