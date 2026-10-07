@@ -1,4 +1,5 @@
 FROM node:24.21.0-alpine as base
+RUN apk add --no-cache openssl
 WORKDIR /app
 
 FROM base as runtime
