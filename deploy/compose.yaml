@@ -12,3 +12,10 @@ services:
       - ./state/.mi.json:/app/.mi.json
       - ./state/.bot.json:/app/.bot.json
       - ./state/app.db:/app/prisma/app.db
+
+networks:
+  default:
+    name: mi-xiaoai
+    ipam:
+      config:
+        - subnet: 172.31.255.0/24
