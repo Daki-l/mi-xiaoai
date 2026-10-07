@@ -12,4 +12,3 @@ services:
       - ./state/.mi.json:/app/.mi.json
       - ./state/.bot.json:/app/.bot.json
       - ./state/app.db:/app/prisma/app.db
-      - ./state/app.db-journal:/app/prisma/app.db-journal

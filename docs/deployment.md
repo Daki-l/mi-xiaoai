@@ -16,10 +16,9 @@ mi-xiaoai/
     .mi.json
     .bot.json
     app.db
-    app.db-journal
 ```
 
-将本地 `.env`、`.migpt.js`、`.bot.json` 和 `prisma/app.db` 复制到对应目录。创建空的 `.mi.json`、`app.db-journal` 文件；容器会写入小米登录会话与 SQLite 临时日志。
+将本地 `.env`、`.migpt.js`、`.bot.json` 和 `prisma/app.db` 复制到对应目录。创建空的 `.mi.json` 文件；容器会写入小米登录会话。SQLite 临时日志由容器自行管理，不能作为单独的 bind mount。
 
 首次在服务器运行时，小米账号可能会要求异地登录验证。完成验证后，等待小米账号信息同步，再重启容器。若服务器环境无法完成验证，可先在本地成功登录，并将生成的 `.mi.json` 复制到服务器的 `state/.mi.json`。
 
