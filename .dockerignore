@@ -5,7 +5,7 @@
 !src
 !app.js
 !package.json
-!pnpm-lock.yaml
+!package-lock.json
 !tsconfig.json
 !tsup.config.ts
 !prisma/engines

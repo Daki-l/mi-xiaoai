@@ -28,8 +28,6 @@ OPENAI_API_KEY=通义千问 API_KEY
 
 关于不同模型的详细申请和配置教程，可以查看这篇文章：[MiGPT 接入豆包等大模型教程](https://migptgui.com/docs/apply/)
 
-> 对于国内用户，可以查看 [此处](https://github.com/idootop/mi-gpt/blob/main/docs/sponsors.md) 获取国内可以直接访问的 OpenAI 代理服务以及免费的 OpenAI 体验 API_KEY。
-
 ### Q：是否支持其他 TTS 服务，如何接入？
 
 支持接入任意 TTS 服务，包括本地部署的 ChatTTS 等。
@@ -296,8 +294,6 @@ export default {
 2. 使用第三方部署的 OpenAI API 反向代理服务，然后更新 `OPENAI_BASE_URL`
 3. 使用国内的 LLM 服务提供商，比如 [通义千问](https://help.aliyun.com/zh/dashscope/developer-reference/compatibility-of-openai-with-dashscope/?spm=a2c4g.11186623.0.i1)、[零一万物](https://platform.01.ai/docs#making-an-api-request)、[Moonshot](https://platform.moonshot.cn/docs/api/chat)、[DeepSeek](https://platform.deepseek.com/api-docs/)等
 
-> 对于国内用户，可以查看 [此处](https://github.com/idootop/mi-gpt/blob/main/docs/sponsors.md) 获取国内可以直接访问的 OpenAI 代理服务以及免费的 OpenAI 体验 API_KEY。
-
 ### Q：Docker 镜像拉取失败
 
 网络异常。近期国内代理普遍不稳定，可以设置 Docker Hub 国内镜像。👉 [相关教程](https://github.com/idootop/mi-gpt/issues/31#issuecomment-2153741281)
@@ -312,15 +308,11 @@ export default {
 
 当前 OpenAI 账号没有使用 `gpt-4` 系列模型的权限，请切换到 `gpt-3` 系列模型，比如：`gpt-3.5-turbo`。相关 [issue](https://github.com/idootop/mi-gpt/issues/30#issuecomment-2154656498)
 
-> 查看 [此处](https://github.com/idootop/mi-gpt/blob/main/docs/sponsors.md) 获取国内可以直接访问的 OpenAI 代理服务（支持 GPT-4o）
-
 > 补充：新注册的 OpenAI 账号在没有绑卡充值之前，可能是用不了 `gpt-4` 系列模型的。相关 [issue](https://github.com/idootop/mi-gpt/issues/94)
 
 ### Q：提示“LLM 响应异常，401 Invalid Authentication”
 
 无效的 `OpenAI_API_KEY`。请检查 `OpenAI_API_KEY` 是否能正常使用，以及对应环境变量是否生效。相关 [issue](https://github.com/idootop/mi-gpt/issues/59)
-
-> 查看 [此处](https://github.com/idootop/mi-gpt/blob/main/docs/sponsors.md) 获取免费的 OpenAI 体验 API_KEY（支持 GPT-4o）
 
 ### Q：提示“LLM 响应异常，403 PermissionDeniedError”
 

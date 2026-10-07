@@ -1,6 +1,3 @@
-> [!WARNING]
-> 本项目已停止维护，不再提供更新与支持，感谢大家的使用。
-
 <div align="center">
 
 # MiGPT：智能家居，从未如此贴心 ❤️
@@ -44,12 +41,6 @@
 - **🧠 长短期记忆**。小爱音箱现在能记住你们之间的每一次对话，越聊越默契，就像是你身边的老朋友。
 - **🔊 自定义 TTS**。厌倦了小爱同学的语音？帮你解锁[「豆包」](https://doubao.com)同款音色，就像真人在回你的消息。
 - ~**🤖️ 智能家居 Agent**。心情不好？小爱立刻懂你，自动帮你播放喜欢的音乐，调节灯光，逗你开心。~
-
-## 🦄 Sponsors
-
-![302.AI](./assets/sponsors/302banner2.jpg)
-
-> 302.AI 是一个按需付费的一站式 AI 应用平台，开放平台，开源生态。[官方网站](https://302.ai)｜[网站介绍](https://help.302.ai)
 
 ## ⚡️ 快速开始
 
@@ -134,8 +125,8 @@ main();
 - [💬 常见问题](https://github.com/idootop/mi-gpt/blob/main/docs/faq.md)
 - [🔊 使用第三方 TTS](https://github.com/idootop/mi-gpt/blob/main/docs/tts.md)
 - [🛠️ 本地开发](https://github.com/idootop/mi-gpt/blob/main/docs/development.md)
+- [🚀 部署到 e445](https://github.com/Daki-l/mi-xiaoai/blob/main/docs/deployment.md)
 - [💎 工作原理](https://github.com/idootop/mi-gpt/blob/main/docs/how-it-works.md)
-- [🦄 Sponsors](https://github.com/idootop/mi-gpt/blob/main/docs/sponsors.md)
 - [✨ 更新日志](https://github.com/idootop/mi-gpt/blob/main/docs/changelog.md)
 - [🚀 Roadmap](https://github.com/idootop/mi-gpt/blob/main/docs/roadmap.md)
 

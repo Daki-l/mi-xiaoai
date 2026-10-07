@@ -1,0 +1,15 @@
+services:
+  mi-xiaoai:
+    image: mi-xiaoai:latest
+    container_name: mi-xiaoai
+    restart: unless-stopped
+    environment:
+      TZ: Asia/Shanghai
+    env_file:
+      - ./config/.env
+    volumes:
+      - ./config/.migpt.js:/app/.migpt.js:ro
+      - ./state/.mi.json:/app/.mi.json
+      - ./state/.bot.json:/app/.bot.json
+      - ./state/app.db:/app/prisma/app.db
+      - ./state/app.db-journal:/app/prisma/app.db-journal

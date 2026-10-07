@@ -1,6 +1,7 @@
 {
   "name": "mi-gpt",
   "version": "4.2.0",
+  "packageManager": "npm@11.19.0",
   "type": "module",
   "description": "将小爱音箱接入 ChatGPT 和豆包，改造成你的专属语音助手。",
   "homepage": "https://github.com/idootop/mi-gpt",
@@ -25,11 +26,12 @@
   "scripts": {
     "start": "node ./app.js",
     "dev": "node --env-file=.env ./app.js",
-    "build": "npx -y prisma generate && rm -rf dist && tsup",
-    "db:gen": "npx -y prisma migrate dev --name init",
-    "db:reset": "rm -f .mi.json .bot.json prisma/app.db prisma/app.db-journal",
+    "build": "prisma generate && node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\" && tsup",
+    "db:gen": "prisma migrate dev --name init",
+    "db:migrate": "prisma migrate deploy",
+    "db:reset": "node -e \"for (const file of ['.mi.json', '.bot.json', 'prisma/app.db', 'prisma/app.db-journal']) require('node:fs').rmSync(file, { force: true })\"",
     "prepublish": "npm run build",
-    "postinstall": "npx -y prisma migrate dev --name hello"
+    "postinstall": "npm run db:migrate"
   },
   "dependencies": {
     "@prisma/client": "^5.14.0",
@@ -41,13 +43,14 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.4.9",
+    "@types/node": "^24.0.0",
     "tsup": "^8.0.1",
     "tsx": "^4.11.0",
     "typescript": "^5.3.3"
   },
   "engines": {
-    "node": ">=16"
+    "node": "24.x",
+    "npm": "11.x"
   },
   "sideEffects": false,
   "files": [

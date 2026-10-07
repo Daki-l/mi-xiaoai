@@ -19,7 +19,7 @@ export const getFiles = (dir: string) => {
 
 export const readFile = <T = any>(
   filePath: string,
-  options?: fs.WriteFileOptions
+  options?: fs.ReadFileOptions | BufferEncoding | null
 ) => {
   const dirname = path.dirname(filePath);
   if (!fs.existsSync(dirname)) {
@@ -34,11 +34,17 @@ export const readFile = <T = any>(
 
 export const readFileSync = (
   filePath: string,
-  options?: fs.WriteFileOptions
+  options?: fs.ReadFileSyncOptions | BufferEncoding | null
 ) => {
   const dirname = path.dirname(filePath);
   if (!fs.existsSync(dirname)) {
     return undefined;
+  }
+  if (options == null) {
+    return fs.readFileSync(filePath);
+  }
+  if (typeof options === "string") {
+    return fs.readFileSync(filePath, options);
   }
   return fs.readFileSync(filePath, options);
 };

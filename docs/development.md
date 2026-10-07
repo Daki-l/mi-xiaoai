@@ -10,13 +10,13 @@ git clone https://github.com/idootop/mi-gpt.git
 cd mi-gpt
 
 # 安装依赖
-pnpm install
+npm ci
 
 # 构建项目
-pnpm build
+npm run build
 
 # 运行项目
-pnpm dev
+npm run dev
 ```
 
 然后按照 [⚙️ 参数设置](https://github.com/idootop/mi-gpt/blob/main/docs/settings.md) 教程，配置好你的 `.env` 和 `.migpt.js` 文件。
@@ -25,17 +25,17 @@ pnpm dev
 
 有两种运行方式：VS Code Debug 或 NPM Script：
 
-- **NPM Script**: 配置好 `.env` 和 `.migpt.js` 后直接使用 `pnpm run dev` 启动 `MiGPT`。
+- **NPM Script**: 配置好 `.env` 和 `.migpt.js` 后直接使用 `npm run dev` 启动 `MiGPT`。
 - **VScode Debug**：使用 VS Code 打开项目根目录，然后按 `F5` 开始调试 `MiGPT`。
 
-> 本项目默认在 Node 20 中运行，如果你的 Node 版本过低可能无法正常启动本项目。
+> 本项目使用 Node.js 24.21.0（自带 npm 11.19.0）运行，请使用相同主版本进行本地开发。
 
 ## 构建 Docker 镜像
 
-此项目默认支持 `linux/amd64`, `linux/arm64` 和 `linux/arm32/v7`，可使用以下命令构建指定平台的镜像：
+此项目默认支持 `linux/amd64` 和 `linux/arm64`，可使用以下命令构建指定平台的镜像：
 
 ```shell
-docker build --platform linux/arm/v7 -t mi-gpt .
+docker build --platform linux/arm64 -t mi-gpt .
 ```
 
 运行构建后的 docker
@@ -51,7 +51,7 @@ docker run -d --env-file $(pwd)/.env -v $(pwd)/.migpt.js:/app/.migpt.js mi-gpt
 这是由于重建了本地数据库，导致本地映射记录不匹配。运行以下命令修复：
 
 ```shell
-pnpm run db:reset
+npm run db:reset
 ```
 
 或者手动删除以下文件，重新运行即可恢复：
