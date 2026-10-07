@@ -4,7 +4,7 @@ WORKDIR /app
 FROM base as runtime
 COPY . .
 RUN --mount=type=cache,target=/root/.npm \
-    npm ci --omit=dev --ignore-scripts && npm exec -- prisma generate && npm run db:migrate
+    npm ci --omit=dev --ignore-scripts && npm exec -- prisma generate
 
 FROM runtime as dist
 RUN --mount=type=cache,target=/root/.npm \
